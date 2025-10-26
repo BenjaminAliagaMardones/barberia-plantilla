@@ -1,63 +1,87 @@
 /** @type {import('tailwindcss').Config} */
+
+// 🎨 Importar tema activo
+const activeTheme = require('./src/config/themes.js').default;
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // 🎨 Paleta de colores para Barbería Premium
+        // � Colores dinámicos desde themes.js
         brand: {
-          DEFAULT: '#1A1A1A', // Negro elegante - color principal
-          50: '#f5f5f5',
-          100: '#e5e5e5',
-          200: '#cccccc',
-          300: '#999999',
-          400: '#666666',
-          500: '#333333',
-          600: '#1A1A1A', // 🎯 Color principal - Negro
-          700: '#141414',
-          800: '#0f0f0f',
-          900: '#0a0a0a',
-          950: '#000000',
-        },
-        accent: {
-          DEFAULT: '#D4AF37', // Dorado elegante - acento principal
+          DEFAULT: activeTheme.colors.primary.DEFAULT,
+          light: activeTheme.colors.primary.light,
+          lighter: activeTheme.colors.primary.lighter,
+          dark: activeTheme.colors.primary.dark,
+          // Mantener escala completa para compatibilidad
           50: '#fdfbf5',
           100: '#faf6e8',
           200: '#f5edd1',
           300: '#eedca5',
-          400: '#e6c870',
-          500: '#D4AF37', // 🎯 Acento principal - Dorado
-          600: '#c09a2a',
-          700: '#a07f22',
+          400: activeTheme.colors.primary.lighter,
+          500: activeTheme.colors.primary.light,
+          600: activeTheme.colors.primary.DEFAULT,
+          700: activeTheme.colors.primary.dark,
           800: '#836821',
           900: '#6e561f',
         },
-        dark: {
-          DEFAULT: '#1A1A1A', // Negro principal para fondos
-          50: '#f5f5f5',
-          100: '#e5e5e5',
-          900: '#1A1A1A',
-          950: '#0a0a0a',
+        // Alias: primary (mismo que brand)
+        primary: {
+          DEFAULT: activeTheme.colors.primary.DEFAULT,
+          light: activeTheme.colors.primary.light,
+          lighter: activeTheme.colors.primary.lighter,
+          dark: activeTheme.colors.primary.dark,
         },
-        light: {
-          DEFAULT: '#f8fafc', // Fondo claro neutral
-          50: '#ffffff',
-          100: '#f8fafc',
-          200: '#f1f5f9',
+        // Alias: accent (mismo que brand) - para compatibilidad hacia atrás
+        accent: {
+          DEFAULT: activeTheme.colors.primary.DEFAULT,
+          light: activeTheme.colors.primary.light,
+          lighter: activeTheme.colors.primary.lighter,
+          dark: activeTheme.colors.primary.dark,
+          // Escala completa
+          50: '#fdfbf5',
+          100: '#faf6e8',
+          200: '#f5edd1',
+          300: '#eedca5',
+          400: activeTheme.colors.primary.lighter,
+          500: activeTheme.colors.primary.light,
+          600: activeTheme.colors.primary.DEFAULT,
+          700: activeTheme.colors.primary.dark,
+          800: '#836821',
+          900: '#6e561f',
         },
-        // 🌑 Colores neutrales mejorados (backgrounds y textos)
+        // Backgrounds dinámicos
+        bg: {
+          primary: activeTheme.colors.background.primary,
+          secondary: activeTheme.colors.background.secondary,
+          card: activeTheme.colors.background.card,
+          hover: activeTheme.colors.background.hover,
+        },
+        // Textos dinámicos
+        txt: {
+          primary: activeTheme.colors.text.primary,
+          secondary: activeTheme.colors.text.secondary,
+          muted: activeTheme.colors.text.muted,
+        },
+        // Borders dinámicos
+        brd: {
+          DEFAULT: activeTheme.colors.border.DEFAULT,
+          light: activeTheme.colors.border.light,
+        },
+        // 🌑 Colores neutrales (mantener para compatibilidad)
         neutral: {
-          50: '#fafafa',  // Backgrounds muy claros
-          100: '#f5f5f5', // Backgrounds alternos
+          50: '#fafafa',
+          100: '#f5f5f5',
           200: '#e5e5e5',
           300: '#d4d4d4',
           400: '#a3a3a3',
-          500: '#737373', // Textos secundarios
+          500: '#737373',
           600: '#525252',
           700: '#404040',
-          800: '#262626', // Textos principales
-          900: '#171717', // Títulos y elementos oscuros
+          800: '#262626',
+          900: '#171717',
           950: '#0a0a0a',
         },
         // 🎨 Colores semánticos adicionales
@@ -67,9 +91,9 @@ module.exports = {
         info: '#3b82f6',
       },
       fontFamily: {
-        // 📝 Tipografía profesional: Playfair Display + Inter
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        heading: ['Playfair Display', 'Georgia', 'serif'],
+        // 📝 Tipografía dinámica desde themes.js
+        sans: activeTheme.fonts.body,
+        heading: activeTheme.fonts.heading,
         mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       backgroundImage: {
