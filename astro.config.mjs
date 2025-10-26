@@ -4,6 +4,10 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  // Configuración para GitHub Pages
+  site: 'https://benjaminaliagamardones.github.io',
+  base: '/barberia-plantilla',
+  
   integrations: [
     react(),
     tailwind({
