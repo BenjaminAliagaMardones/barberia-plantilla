@@ -90,8 +90,8 @@ const { about } = barberia;
           ))}
         </div>
 
-        <!-- CTA -->
-        <div class="pt-6" data-aos="fade-up">
+        <!-- CTA doble -->
+        <div class="pt-6 flex flex-col sm:flex-row gap-4" data-aos="fade-up">
           <a 
             href={barberia.hero.ctaPrimary.link}
             class="inline-flex items-center justify-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-brand-900 font-bold rounded-lg shadow-gold hover:shadow-glow-gold transition-all duration-300 transform hover:scale-105"
@@ -100,6 +100,17 @@ const { about } = barberia;
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
+          </a>
+          
+          <!-- NUEVO: CTA Secundario -->
+          <a 
+            href="#servicios"
+            class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-accent-500 hover:bg-accent-500/10 text-accent-400 font-bold rounded-lg transition-all duration-300 hover:scale-105"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Ver Nuestros Servicios</span>
           </a>
         </div>
       </div>

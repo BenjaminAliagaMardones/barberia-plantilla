@@ -36,14 +36,15 @@ const positionClasses = position === 'bottom-right'
 >
   <!-- Botón -->
   <div class="relative">
-    <!-- Animación de pulso -->
+    <!-- Animación de pulso mejorada -->
     <span class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></span>
+    <span class="absolute inset-0 bg-green-400 rounded-full animate-pulse"></span>
     
-    <!-- Botón principal -->
-    <div class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-green-500 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
+    <!-- Botón principal con mejoras -->
+    <div class="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 transform hover:scale-125 hover:rotate-12 transition-all duration-500 ring-4 ring-green-500/30 hover:ring-green-400/50">
       <!-- Icono de WhatsApp -->
       <svg
-        class="w-8 h-8 sm:w-9 sm:h-9"
+        class="w-9 h-9 sm:w-11 sm:h-11 drop-shadow-lg"
         fill="currentColor"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

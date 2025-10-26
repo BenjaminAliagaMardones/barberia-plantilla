@@ -335,5 +335,53 @@ export const schemaOrg = {
   "founder": {
     "@type": "Person",
     "name": site.business.name
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "100",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Juan Pablo G."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Excelente atención, muy profesional. El mejor corte que me han hecho en años. Totalmente recomendado."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carlos Muñoz"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "El mejor corte que me han hecho. El barbero es muy detallista y profesional. El ambiente es excelente."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Felipe Andrade"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Ambiente agradable y resultados perfectos. Siempre salgo satisfecho. La atención es de primera."
+    }
+  ]
 };
