@@ -8,6 +8,7 @@ export const prerender = true;
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
+import BackgroundImage from '../components/BackgroundImage.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import AboutSection from '../components/AboutSection.astro';
@@ -26,9 +27,9 @@ import { barberia } from '../data/barberia.js';
 
   <!-- Hero Section - Barbería Premium con imagen de fondo -->
   <section class="relative pt-20 md:pt-28 pb-12 md:pb-16 px-4 overflow-hidden min-h-[70vh] flex items-center bg-gradient-to-b from-neutral-900 via-black to-neutral-950">
-    <!-- Imagen de fondo con overlay - Mayor visibilidad -->
-    <div class="absolute inset-0 bg-[url('/images/hero/barberia-bg.webp')] bg-cover bg-center opacity-35"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80"></div>
+    
+    <!-- Imagen de fondo personalizable desde site.config.ts -->
+    <BackgroundImage />
     
     <!-- Fondo decorativo con textura radial -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">

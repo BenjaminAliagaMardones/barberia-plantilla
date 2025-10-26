@@ -1,0 +1,74 @@
+---
+/**
+ * 🖼️ BackgroundImage Component
+ * 
+ * Componente para mostrar imagen de fondo personalizable
+ * La configuración se toma de site.config.ts
+ * 
+ * Props:
+ * - customImage (opcional): Usar imagen diferente a la configurada
+ * - customOpacity (opcional): Sobreescribir opacidad
+ */
+
+import { siteConfig } from '../config/site.config';
+
+interface Props {
+  customImage?: string;
+  customOpacity?: number;
+}
+
+const { 
+  customImage, 
+  customOpacity 
+} = Astro.props;
+
+const bgConfig = siteConfig.background;
+const imageSrc = customImage || bgConfig.image;
+const opacity = customOpacity ?? bgConfig.opacity;
+const blur = bgConfig.blur;
+const overlay = bgConfig.overlay;
+---
+
+<!-- Contenedor de fondo -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+  <!-- Imagen de fondo -->
+  <div 
+    class="absolute inset-0 bg-cover bg-center transition-opacity duration-300"
+    style={`
+      background-image: url('${imageSrc}');
+      background-position: ${bgConfig.position};
+      background-size: ${bgConfig.size};
+      opacity: ${opacity};
+      ${blur > 0 ? `filter: blur(${blur}px);` : ''}
+    `}
+  >
+  </div>
+
+  <!-- Overlay oscuro opcional -->
+  {overlay > 0 && (
+    <div 
+      class="absolute inset-0 bg-black transition-opacity duration-300"
+      style={`opacity: ${overlay};`}
+    >
+    </div>
+  )}
+
+  <!-- Gradiente decorativo (mejora la legibilidad del texto) -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+</div>
+
+<style>
+  /* Animación suave al cargar */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  div[class*="bg-cover"] {
+    animation: fadeIn 0.8s ease-out;
+  }
+</style>

@@ -73,6 +73,27 @@ export const siteConfig = {
     logo: '/logo.svg',
     ogImage: '/og-barberia.jpg',
   },
+
+  // 🖼️ Imagen de Fondo Personalizable
+  background: {
+    // Ruta de la imagen (coloca tu foto en /public/images/)
+    image: '/images/hero/barberia-bg.webp',
+    
+    // Opacidad de la imagen (0.1 = muy transparente, 1 = opaca)
+    opacity: 0.35,
+    
+    // Posición de la imagen: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    position: 'center',
+    
+    // Tamaño: 'cover' (llenar todo) | 'contain' (imagen completa visible)
+    size: 'cover',
+    
+    // Blur/desenfoque (opcional, en px. 0 = sin blur)
+    blur: 0,
+    
+    // Overlay oscuro adicional (0 = sin overlay, 1 = completamente oscuro)
+    overlay: 0.5,
+  },
   
   // 📊 Analytics y Tracking
   analytics: {
