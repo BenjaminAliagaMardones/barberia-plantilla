@@ -72,6 +72,13 @@ module.exports = {
         heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
+      backgroundImage: {
+        // 🎨 Gradientes personalizados
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial-at-t': 'radial-gradient(ellipse at top, var(--tw-gradient-stops))',
+        'gradient-radial-at-b': 'radial-gradient(ellipse at bottom, var(--tw-gradient-stops))',
+        'gradient-radial-at-c': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+      },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',

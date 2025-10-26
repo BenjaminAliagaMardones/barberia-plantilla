@@ -40,24 +40,28 @@ const siteUrl = Astro.site || 'https://benjamin-mardones.cl';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- 🎯 SEO Meta Tags -->
-    <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <!-- 🎯 SEO Meta Tags mejorados -->
+    <title>Barbería Premium Temuco | Cortes modernos y estilo clásico</title>
+    <meta name="description" content="Barbería profesional en Temuco. Cortes modernos, degradados y servicios premium. Reserva tu hora hoy. Más de 5 años de experiencia." />
     <meta name="keywords" content={keywords} />
     <meta name="author" content={site.business.name} />
     <link rel="canonical" href={canonicalURL} />
     
     <!-- 🌍 Localización y Geo-targeting -->
-    <meta name="geo.region" content="CL-RM" />
-    <meta name="geo.placename" content={site.business.address.city} />
+    <meta name="geo.region" content="CL-AR" />
+    <meta name="geo.placename" content="Temuco" />
     <meta name="geo.position" content={`${site.business.geo.latitude};${site.business.geo.longitude}`} />
     <meta name="ICBM" content={`${site.business.geo.latitude}, ${site.business.geo.longitude}`} />
     
     <!-- 🤖 Robots -->
     <meta name="robots" content="index, follow, max-image-preview:large" />
     
-    <!-- 📱 Open Graph -->
-    <meta property="og:type" content={type} />
+    <!-- 📱 Open Graph mejorado -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Barbería Premium Temuco" />
+    <meta property="og:description" content="Cortes modernos, estilo clásico y atención personalizada. Reserva tu hora hoy y obtén 10% de descuento." />
+    <meta property="og:image" content={`${siteUrl}/images/preview.webp`} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
