@@ -77,7 +77,7 @@ export const siteConfig = {
   // 🖼️ Imagen de Fondo Personalizable
   background: {
     // Ruta de la imagen (coloca tu foto en /public/images/)
-    image: '/images/hero/barberia-bg.webp',
+    image: '/barberia-plantilla/images/hero/barberia-bg.jpg',
     
     // Opacidad de la imagen (0.1 = muy transparente, 1 = opaca)
     opacity: 0.35,
