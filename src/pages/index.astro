@@ -107,7 +107,7 @@ import { barberia } from '../data/barberia.js';
             data-aos="fade-up"
             data-aos-delay="600"
           >
-            📍 Temuco, Chile 🇨🇱
+            📍 Temuco, Chile 🇨🇱 — Atención por reserva
           </p>
 
           <!-- Stats -->
@@ -230,12 +230,12 @@ import { barberia } from '../data/barberia.js';
   <AboutSection />
 
   <!-- Sección de Testimonios con diseño mejorado -->
-  <section id="testimonios" class="py-20 px-4 bg-[#111]">
+  <section id="testimonios" class="py-20 px-4 bg-[#0a0a0a]">
     <div class="max-w-7xl mx-auto">
       <!-- Encabezado -->
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-          Lo que dicen nuestros clientes
+          Opiniones de nuestros clientes
         </h2>
         <p class="text-lg text-gray-400 mb-6">
           La satisfacción de nuestros clientes nos respalda
@@ -247,27 +247,25 @@ import { barberia } from '../data/barberia.js';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {barberia.testimonials.map((testimonial, index) => (
           <div 
-            class="bg-[#1c1c1c] rounded-xl p-6 shadow-lg hover:-translate-y-1 transition-all duration-300"
+            class="bg-[#1c1c1c] rounded-xl p-8 shadow-lg hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-600/10 transition-all duration-300 border border-neutral-800"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <!-- Header con avatar y nombre -->
-            <div class="flex items-center gap-3 mb-4">
-              <div class="relative">
-                <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full flex items-center justify-center text-black font-bold text-lg shadow-md">
-                  {testimonial.name.charAt(0)}
-                </div>
-              </div>
-              <div>
-                <p class="text-white font-semibold">{testimonial.name}</p>
-                <p class="text-yellow-500 text-sm">★★★★★</p>
-              </div>
-            </div>
-
+            <!-- Estrellas amarillas arriba -->
+            <p class="text-yellow-500 text-2xl mb-4">★★★★★</p>
+            
             <!-- Texto del testimonio -->
-            <p class="text-gray-400 leading-relaxed">
+            <p class="text-gray-300 leading-relaxed mb-6 italic">
               "{testimonial.text}"
             </p>
+
+            <!-- Footer con nombre -->
+            <div class="flex items-center gap-3 pt-4 border-t border-neutral-700">
+              <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full flex items-center justify-center text-black font-bold text-lg shadow-md">
+                {testimonial.name.charAt(0)}
+              </div>
+              <p class="text-gray-400 font-medium">— {testimonial.name}</p>
+            </div>
           </div>
         ))}
       </div>

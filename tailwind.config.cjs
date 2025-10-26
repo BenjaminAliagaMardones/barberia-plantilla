@@ -67,9 +67,9 @@ module.exports = {
         info: '#3b82f6',
       },
       fontFamily: {
-        // 📝 Tipografía profesional con Inter como base
+        // 📝 Tipografía profesional: Playfair Display + Inter
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['Playfair Display', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       backgroundImage: {

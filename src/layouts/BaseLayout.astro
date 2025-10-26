@@ -40,7 +40,12 @@ const siteUrl = Astro.site || 'https://benjamin-mardones.cl';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- 🎯 SEO Meta Tags mejorados -->
+    <!-- � Google Fonts: Playfair Display + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- �🎯 SEO Meta Tags mejorados -->
     <title>Barbería Premium Temuco | Cortes modernos y estilo clásico</title>
     <meta name="description" content="Barbería profesional en Temuco. Cortes modernos, degradados y servicios premium. Reserva tu hora hoy. Más de 5 años de experiencia." />
     <meta name="keywords" content={keywords} />
@@ -98,7 +103,7 @@ const siteUrl = Astro.site || 'https://benjamin-mardones.cl';
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   
-  <body class="font-sans antialiased bg-white text-neutral-800 selection:bg-brand-100 selection:text-brand-900">
+  <body class="font-sans antialiased bg-gradient-to-b from-neutral-900 via-black to-neutral-950 text-white selection:bg-yellow-600 selection:text-black">
     <slot />
     
     <!-- 🎞️ AOS JavaScript -->

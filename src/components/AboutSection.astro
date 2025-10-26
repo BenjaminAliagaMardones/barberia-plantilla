@@ -8,42 +8,50 @@ import { barberia } from '../data/barberia.js';
 const { about } = barberia;
 ---
 
-<section id="nosotros" class="py-20 px-4 bg-gradient-to-br from-neutral-900 via-brand-900 to-neutral-900">
+<section id="nosotros" class="py-20 px-4 bg-neutral-900">
   <div class="max-w-7xl mx-auto">
     <!-- Encabezado -->
     <div class="text-center mb-16" data-aos="fade-up">
       <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
         {about.title}
       </h2>
-      <p class="text-xl text-accent-400 font-semibold mb-6">
+      <p class="text-xl text-yellow-400 font-semibold mb-6">
         {about.subtitle}
       </p>
-      <div class="w-24 h-1 bg-accent-500 mx-auto"></div>
+      <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <!-- Columna izquierda: Imagen del local -->
+      <!-- Columna izquierda: Imagen del barbero/local -->
       <div class="relative" data-aos="fade-right">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-accent/20">
-          <!-- Placeholder para imagen del local -->
-          <div class="aspect-square bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-yellow-600/20">
+          <!-- Imagen del barbero o local -->
+          <img 
+            src="/barbero.webp" 
+            alt="Barbero profesional - Barbería Premium Temuco" 
+            class="rounded-xl w-full h-auto object-cover"
+            loading="lazy"
+            onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Placeholder si la imagen no existe -->
+          <div class="hidden aspect-[4/5] bg-gradient-to-br from-neutral-800 to-neutral-900 items-center justify-center">
             <div class="text-center p-8">
               <div class="text-8xl mb-4">💈</div>
-              <p class="text-accent-400 text-lg font-semibold">Barbería Premium</p>
+              <p class="text-yellow-400 text-lg font-semibold">Barbería Premium</p>
               <p class="text-neutral-400 text-sm mt-2">Local profesional en Temuco</p>
             </div>
           </div>
           
           <!-- Badge flotante -->
-          <div class="absolute top-6 right-6 bg-accent-500 text-brand-900 px-6 py-3 rounded-full shadow-glow-gold">
+          <div class="absolute top-6 right-6 bg-yellow-600 text-black px-6 py-3 rounded-full shadow-lg">
             <p class="font-bold text-lg">5+ años</p>
             <p class="text-xs">de experiencia</p>
           </div>
         </div>
 
         <!-- Elementos decorativos -->
-        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent-500/20 rounded-full blur-2xl"></div>
-        <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent-500/20 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-600/20 rounded-full blur-2xl"></div>
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-yellow-600/20 rounded-full blur-2xl"></div>
       </div>
 
       <!-- Columna derecha: Contenido -->
@@ -53,18 +61,38 @@ const { about } = barberia;
           <p class="text-neutral-300 text-lg leading-relaxed mb-6">
             {about.description}
           </p>
-          <p class="text-neutral-400 leading-relaxed italic border-l-4 border-accent-500 pl-4">
+          <p class="text-neutral-400 leading-relaxed italic border-l-4 border-yellow-500 pl-4">
             {about.mission}
           </p>
         </div>
 
+        <!-- Lista de valores con íconos -->
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start" data-aos="fade-up" data-aos-delay="100">
+            <span class="text-yellow-500 text-xl mr-3">⏱️</span>
+            <span>Atención puntual y profesional</span>
+          </li>
+          <li class="flex items-start" data-aos="fade-up" data-aos-delay="200">
+            <span class="text-yellow-500 text-xl mr-3">💈</span>
+            <span>Productos de alta calidad</span>
+          </li>
+          <li class="flex items-start" data-aos="fade-up" data-aos-delay="300">
+            <span class="text-yellow-500 text-xl mr-3">⭐</span>
+            <span>100+ clientes satisfechos</span>
+          </li>
+          <li class="flex items-start" data-aos="fade-up" data-aos-delay="400">
+            <span class="text-yellow-500 text-xl mr-3">🏆</span>
+            <span>5+ años de experiencia</span>
+          </li>
+        </ul>
+
         <!-- Beneficios -->
-        <div class="grid grid-cols-1 gap-6">
+        <div class="grid grid-cols-1 gap-6 mt-8">
           {about.benefits.map((benefit, index) => (
             <div 
-              class="bg-neutral-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-neutral-800/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10 border border-neutral-700/50"
+              class="bg-neutral-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-neutral-800/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-600/10 border border-neutral-700/50"
               data-aos="fade-up"
-              data-aos-delay={index * 100}
+              data-aos-delay={index * 100 + 500}
             >
               <div class="flex items-start space-x-4">
                 <div class="text-4xl flex-shrink-0">{benefit.icon}</div>
@@ -81,11 +109,11 @@ const { about } = barberia;
         <div class="grid grid-cols-2 gap-4 pt-4">
           {about.experience.map((item, index) => (
             <div 
-              class="text-center p-4 bg-neutral-800/30 rounded-lg border border-accent-500/20"
+              class="text-center p-4 bg-neutral-800/30 rounded-lg border border-yellow-500/20"
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
-              <p class="text-accent-400 font-semibold text-sm">✓ {item}</p>
+              <p class="text-yellow-400 font-semibold text-sm">✓ {item}</p>
             </div>
           ))}
         </div>
@@ -94,7 +122,7 @@ const { about } = barberia;
         <div class="pt-6 flex flex-col sm:flex-row gap-4" data-aos="fade-up">
           <a 
             href={barberia.hero.ctaPrimary.link}
-            class="inline-flex items-center justify-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-brand-900 font-bold rounded-lg shadow-gold hover:shadow-glow-gold transition-all duration-300 transform hover:scale-105"
+            class="inline-flex items-center justify-center px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg shadow-lg hover:shadow-yellow-600/50 transition-all duration-300 transform hover:scale-105"
           >
             <span>{barberia.hero.ctaPrimary.text}</span>
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

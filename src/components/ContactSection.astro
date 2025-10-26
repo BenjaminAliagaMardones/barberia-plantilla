@@ -15,13 +15,13 @@ const { contact, business } = barberia;
       <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
         {contact.title}
       </h2>
-      <p class="text-xl text-accent-400 font-semibold mb-6">
+      <p class="text-xl text-yellow-400 font-semibold mb-6">
         {contact.subtitle}
       </p>
       <p class="text-neutral-300 max-w-2xl mx-auto">
         {contact.description}
       </p>
-      <div class="w-24 h-1 bg-accent-500 mx-auto mt-6"></div>
+      <div class="w-24 h-1 bg-yellow-500 mx-auto mt-6"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -68,7 +68,7 @@ const { contact, business } = barberia;
         <!-- Información de contacto -->
         <div class="bg-neutral-800 rounded-2xl p-8 border border-neutral-700" data-aos="fade-right" data-aos-delay="100">
           <h3 class="text-white font-bold text-xl mb-6 flex items-center">
-            <svg class="w-6 h-6 mr-3 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 mr-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             Información de Contacto
@@ -77,12 +77,12 @@ const { contact, business } = barberia;
           <div class="space-y-4">
             <!-- Teléfono -->
             <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
               <div>
                 <p class="text-neutral-400 text-sm">Teléfono</p>
-                <a href={`tel:${business.phone.replace(/\s/g, '')}`} class="text-white hover:text-accent-400 transition-colors">
+                <a href={`tel:${business.phone.replace(/\s/g, '')}`} class="text-white hover:text-yellow-400 transition-colors">
                   {business.phoneDisplay}
                 </a>
               </div>
@@ -90,12 +90,12 @@ const { contact, business } = barberia;
 
             <!-- Email -->
             <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
               <div>
                 <p class="text-neutral-400 text-sm">Email</p>
-                <a href={`mailto:${business.email}`} class="text-white hover:text-accent-400 transition-colors">
+                <a href={`mailto:${business.email}`} class="text-white hover:text-yellow-400 transition-colors">
                   {business.email}
                 </a>
               </div>
@@ -103,7 +103,7 @@ const { contact, business } = barberia;
 
             <!-- Dirección -->
             <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
@@ -116,7 +116,7 @@ const { contact, business } = barberia;
 
             <!-- Horario -->
             <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <div>
@@ -168,9 +168,9 @@ const { contact, business } = barberia;
           class="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] border border-neutral-700"
           data-aos="fade-left"
         >
-          <!-- Mapa embebido de Google Maps -->
+          <!-- Mapa embebido de Google Maps - Temuco -->
           <iframe
-            src={contact.mapEmbed}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50893.89551747511!2d-72.63421372145123!3d-38.73960254999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d41e2e42f5f9%3A0x3b5b3b3b3b3b3b3b!2sTemuco%2C%20Araucan%C3%ADa%2C%20Chile!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
             width="100%"
             height="100%"
             style="border:0;"
@@ -178,6 +178,7 @@ const { contact, business } = barberia;
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             class="w-full h-full"
+            title="Mapa de ubicación - Barbería Premium Temuco"
           ></iframe>
         </div>
 
