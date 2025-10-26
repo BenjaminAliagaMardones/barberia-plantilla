@@ -1,0 +1,160 @@
+---
+/**
+ * servicios.astro
+ * Página de listado completo de servicios
+ * Grid de todas las soluciones disponibles
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+// Lista completa de servicios
+const allServices = [
+  {
+    title: 'Diseño Web Profesional',
+    description: 'Sitios web modernos, responsivos y optimizados para SEO. Perfectos para negocios que quieren destacar en línea.',
+    icon: 'web',
+    link: '/diseno-web',
+  },
+  {
+    title: 'Automatización con n8n',
+    description: 'Automatiza tareas repetitivas y conecta tus herramientas. Ahorra tiempo y reduce errores humanos.',
+    icon: 'automation',
+    link: '/automatizacion',
+  },
+  {
+    title: 'Desarrollo Digital',
+    description: 'Aplicaciones web y soluciones personalizadas para necesidades específicas de tu negocio.',
+    icon: 'development',
+    link: '/desarrollo-digital',
+  },
+  {
+    title: 'Optimización SEO',
+    description: 'Mejora tu posicionamiento en Google y atrae más clientes potenciales de forma orgánica.',
+    icon: 'seo',
+    link: '/seo',
+  },
+  {
+    title: 'E-commerce',
+    description: 'Tiendas en línea completas para vender tus productos 24/7 con sistemas de pago integrados.',
+    icon: 'ecommerce',
+    link: '/ecommerce',
+  },
+  {
+    title: 'Consultoría Digital',
+    description: 'Asesoría estratégica para definir la mejor ruta digital para tu negocio y alcanzar tus objetivos.',
+    icon: 'consulting',
+    link: '/consultoria',
+  },
+];
+---
+
+<BaseLayout
+  title="Servicios Digitales | Benjamin Mardones"
+  description="Servicios profesionales de diseño web, automatización, desarrollo digital y consultoría para PYMEs locales."
+  keywords="servicios digitales, diseño web, automatización, desarrollo, ecommerce, seo, consultoría"
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="pt-12 md:pt-20 pb-12 md:pb-16 px-4 bg-gradient-to-br from-brand-50 to-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="inline-block px-4 py-2 bg-brand-100 text-brand-700 rounded-full text-sm font-semibold mb-6">
+        💼 Servicios Profesionales
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">
+        Soluciones Digitales<br />
+        <span class="text-brand-600">Para Tu Negocio</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Ofrezco una gama completa de servicios diseñados específicamente para ayudar a 
+        pequeñas y medianas empresas a tener éxito en el mundo digital.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid de Servicios -->
+  <section class="py-12 md:py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {allServices.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+            link={service.link}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          ¿Cómo Trabajo?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Un proceso simple y transparente, enfocado en tus resultados
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="space-y-8">
+        {[
+          {
+            step: '01',
+            title: 'Reunión Inicial',
+            description: 'Conversamos sobre tu negocio, objetivos y necesidades específicas.',
+          },
+          {
+            step: '02',
+            title: 'Propuesta Personalizada',
+            description: 'Te envío una propuesta detallada con tiempos, costos y entregables.',
+          },
+          {
+            step: '03',
+            title: 'Desarrollo',
+            description: 'Trabajo en tu proyecto con actualizaciones constantes y retroalimentación.',
+          },
+          {
+            step: '04',
+            title: 'Entrega y Soporte',
+            description: 'Entrego el proyecto finalizado y ofrezco soporte continuo.',
+          },
+        ].map((item) => (
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-16 h-16 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">
+              {item.step}
+            </div>
+            <div class="flex-1 pt-2">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p class="text-gray-600">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    title="¿Tienes un proyecto en mente?"
+    subtitle="Conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos digitales"
+    buttonText="Solicitar Cotización"
+    buttonLink="/contacto"
+    secondaryButtonText="Ver Casos de Éxito"
+    secondaryButtonLink="/nosotros"
+  />
+
+  <Footer />
+</BaseLayout>

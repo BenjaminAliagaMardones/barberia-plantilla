@@ -1,0 +1,249 @@
+---
+/**
+ * nosotros.astro
+ * Página sobre el profesional - Storytelling y credibilidad
+ * Incluye bio, experiencia, valores y casos de éxito
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Sobre Mí | Benjamin Mardones"
+  description="Conoce más sobre Benjamin Mardones, desarrollador web freelance especializado en soluciones digitales para negocios locales."
+  keywords="sobre mi, benjamin mardones, desarrollador web, freelance, ingeniero civil informática"
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="pt-12 md:pt-20 pb-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Imagen/Avatar -->
+        <div class="order-2 lg:order-1">
+          <div class="relative w-full max-w-md mx-auto">
+            <img
+              src="/images/about/developer.svg"
+              alt="Benjamin Mardones - Desarrollador Web"
+              class="rounded-2xl shadow-2xl w-full"
+              loading="eager"
+            />
+            <div class="absolute -bottom-6 -right-6 w-full h-full bg-brand-100 rounded-2xl -z-10"></div>
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <div class="inline-block px-4 py-2 bg-brand-100 text-brand-700 rounded-full text-sm font-semibold">
+            👋 ¡Hola! Soy Benjamin
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-gray-900">
+            Transformo ideas en
+            <span class="text-brand-600 block mt-2">soluciones digitales</span>
+          </h1>
+          
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Soy estudiante de <strong>Ingeniería Civil Informática</strong> y desarrollador web freelance. 
+            Mi pasión es ayudar a pequeñas y medianas empresas a tener éxito en el mundo digital.
+          </p>
+
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Creo en el poder de la tecnología para transformar negocios. Por eso, me especializo 
+            en crear soluciones que no solo se ven bien, sino que generan resultados reales: 
+            más clientes, más ventas y procesos más eficientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mi Historia -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+        Mi Historia
+      </h2>
+      
+      <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+        <p>
+          Empecé en el mundo del desarrollo web por curiosidad, queriendo entender cómo 
+          funcionaban las páginas que visitaba todos los días. Lo que comenzó como un hobby 
+          se convirtió rápidamente en una pasión.
+        </p>
+        
+        <p>
+          Durante mi carrera universitaria, me di cuenta de que muchos negocios locales 
+          —cafeterías, abogados, pequeños comercios— querían tener presencia en línea pero 
+          no sabían por dónde empezar o los costos eran prohibitivos.
+        </p>
+        
+        <p>
+          Ahí nació mi misión: <strong>democratizar el acceso a soluciones digitales profesionales</strong>. 
+          Hoy trabajo con negocios locales creando sitios web, automatizando procesos y 
+          ayudándoles a crecer en el mundo digital con soluciones accesibles y efectivas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
+        Mis Valores
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: '🎯',
+            title: 'Enfoque en Resultados',
+            description: 'No solo entrego proyectos bonitos, entrego soluciones que generan valor real para tu negocio.',
+          },
+          {
+            icon: '💬',
+            title: 'Comunicación Transparente',
+            description: 'Actualizaciones constantes, respuestas rápidas y un proceso claro de principio a fin.',
+          },
+          {
+            icon: '🚀',
+            title: 'Calidad Profesional',
+            description: 'Código limpio, diseños modernos y mejores prácticas en cada línea de código.',
+          },
+          {
+            icon: '⚡',
+            title: 'Agilidad',
+            description: 'Entregas rápidas sin sacrificar calidad. Tu tiempo es valioso y lo respeto.',
+          },
+          {
+            icon: '🤝',
+            title: 'Compromiso',
+            description: 'Tu éxito es mi éxito. Me involucro con cada proyecto como si fuera mío.',
+          },
+          {
+            icon: '📚',
+            title: 'Aprendizaje Continuo',
+            description: 'Siempre actualizado con las últimas tecnologías y tendencias del mercado.',
+          },
+        ].map((value) => (
+          <div class="bg-white p-6 rounded-xl shadow-card hover:shadow-brand transition-shadow">
+            <div class="text-4xl mb-4">{value.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia y Habilidades -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Experiencia -->
+        <div>
+          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-8">
+            Experiencia
+          </h2>
+          <div class="space-y-6">
+            {[
+              {
+                title: 'Desarrollador Freelance',
+                period: '2023 - Presente',
+                description: 'Diseño y desarrollo de sitios web para PYMEs locales. Especialización en automatización de procesos.',
+              },
+              {
+                title: 'Estudiante Ingeniería Civil Informática',
+                period: '2021 - Presente',
+                description: 'Formación en desarrollo de software, bases de datos, algoritmos y gestión de proyectos.',
+              },
+              {
+                title: 'Proyectos Académicos',
+                period: '2021 - 2024',
+                description: 'Desarrollo de aplicaciones web, móviles y sistemas de gestión como parte del curriculum universitario.',
+              },
+            ].map((exp) => (
+              <div class="border-l-4 border-brand-600 pl-6">
+                <h3 class="font-bold text-gray-900 text-lg">{exp.title}</h3>
+                <p class="text-sm text-brand-600 font-medium mb-2">{exp.period}</p>
+                <p class="text-gray-600">{exp.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Habilidades Técnicas -->
+        <div>
+          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-8">
+            Habilidades Técnicas
+          </h2>
+          <div class="space-y-4">
+            {[
+              { name: 'Desarrollo Frontend', level: 90 },
+              { name: 'Astro & React', level: 85 },
+              { name: 'Tailwind CSS', level: 95 },
+              { name: 'Automatización (n8n)', level: 80 },
+              { name: 'SEO & Performance', level: 85 },
+              { name: 'Git & Deployment', level: 88 },
+            ].map((skill) => (
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-900">{skill.name}</span>
+                  <span class="text-brand-600 font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-brand-600 h-2 rounded-full transition-all duration-1000"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logros -->
+  <section class="py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12">
+        Logros y Certificaciones
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { number: '50+', label: 'Proyectos Completados' },
+          { number: '30+', label: 'Clientes Satisfechos' },
+          { number: '100%', label: 'Recomendaciones' },
+        ].map((stat) => (
+          <div class="p-6 bg-gradient-to-br from-brand-50 to-white rounded-xl border-2 border-brand-200">
+            <div class="text-4xl md:text-5xl font-bold text-brand-600 mb-2">
+              {stat.number}
+            </div>
+            <div class="text-gray-700 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    title="¿Conversemos sobre tu proyecto?"
+    subtitle="Estoy disponible para nuevos proyectos y siempre respondo en menos de 24 horas"
+    buttonText="Agendar Reunión"
+    buttonLink="/contacto"
+    secondaryButtonText="Ver Servicios"
+    secondaryButtonLink="/servicios"
+  />
+
+  <Footer />
+</BaseLayout>

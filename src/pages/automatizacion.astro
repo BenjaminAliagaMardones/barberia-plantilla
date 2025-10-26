@@ -1,0 +1,232 @@
+---
+/**
+ * automatizacion.astro
+ * Página de detalle del servicio "Automatización con n8n"
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Automatización de Procesos con n8n | Benjamin Mardones"
+  description="Automatiza tareas repetitivas y ahorra horas de trabajo manual. Soluciones de automatización con n8n para pequeñas empresas."
+  keywords="automatización, n8n, automatización de procesos, workflow automation, ahorro de tiempo"
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-12 md:pt-20 pb-12 px-4 bg-gradient-to-br from-brand-600 to-brand-800 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center space-y-6">
+        <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          ⚡ Automatización con n8n
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+          Ahorra Horas de Trabajo
+          <span class="block mt-2">Con Automatización</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-brand-100 max-w-3xl mx-auto leading-relaxed">
+          Automatizo tareas repetitivas conectando tus herramientas favoritas. Reduce errores, 
+          ahorra tiempo y enfócate en hacer crecer tu negocio.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <a
+            href="/contacto"
+            class="inline-block bg-white text-brand-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all shadow-xl"
+          >
+            Consulta Gratis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué Puedo Automatizar -->
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          ¿Qué Puedo Automatizar?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Ejemplos de automatizaciones que puedo implementar para tu negocio
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '📧',
+            title: 'Emails Automáticos',
+            description: 'Envía respuestas automáticas, follow-ups y newsletters sin intervención manual.',
+          },
+          {
+            icon: '📊',
+            title: 'Reportes Automáticos',
+            description: 'Genera y envía reportes de ventas, inventario o finanzas automáticamente.',
+          },
+          {
+            icon: '💬',
+            title: 'Notificaciones WhatsApp',
+            description: 'Envía alertas y confirmaciones a clientes por WhatsApp de forma automática.',
+          },
+          {
+            icon: '📝',
+            title: 'Gestión de Formularios',
+            description: 'Los datos de formularios web se registran automáticamente en tu sistema.',
+          },
+          {
+            icon: '🗓️',
+            title: 'Sincronización de Calendarios',
+            description: 'Sincroniza citas entre Google Calendar, tu CRM y notificaciones.',
+          },
+          {
+            icon: '💳',
+            title: 'Procesamiento de Pagos',
+            description: 'Actualiza inventario y envía confirmaciones cuando recibes un pago.',
+          },
+          {
+            icon: '📱',
+            title: 'Redes Sociales',
+            description: 'Publica contenido automáticamente en múltiples redes sociales.',
+          },
+          {
+            icon: '📦',
+            title: 'Gestión de Inventario',
+            description: 'Actualiza stock automáticamente entre tu tienda y tus proveedores.',
+          },
+          {
+            icon: '🎯',
+            title: 'Lead Management',
+            description: 'Captura leads automáticamente y distribúyelos a tu equipo de ventas.',
+          },
+        ].map((item) => (
+          <div class="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-brand-600 transition-colors">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          Beneficios de Automatizar
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            title: '⏰ Ahorro de Tiempo',
+            description: 'Recupera entre 10-20 horas semanales eliminando tareas repetitivas.',
+          },
+          {
+            title: '💰 Reducción de Costos',
+            description: 'Menos errores humanos significa menos dinero perdido y más eficiencia.',
+          },
+          {
+            title: '🎯 Mayor Precisión',
+            description: 'Las máquinas no se cansan ni cometen errores por distracción.',
+          },
+          {
+            title: '📈 Escalabilidad',
+            description: 'Crece tu negocio sin necesidad de contratar más personal.',
+          },
+        ].map((benefit) => (
+          <div class="p-8 bg-white rounded-2xl border-2 border-gray-200 shadow-card">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso de Éxito -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">
+          Caso de Éxito Real
+        </h2>
+      </div>
+      
+      <TestimonialCard
+        name="Andrea Silva"
+        role="Emprendedora"
+        text="La automatización que Benjamin implementó nos ahorra más de 15 horas semanales. Lo que antes tomaba todo un día ahora se hace automáticamente mientras dormimos. Increíble inversión."
+        image="https://i.pravatar.cc/150?img=47"
+        rating={5}
+      />
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+        Inversión
+      </h2>
+      
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-brand max-w-2xl mx-auto">
+        <div class="text-5xl font-bold text-brand-600 mb-4">Desde $199.990</div>
+        <p class="text-lg text-gray-600 mb-8">
+          El precio varía según la complejidad de la automatización y las integraciones necesarias
+        </p>
+        
+        <ul class="text-left space-y-3 mb-8">
+          {[
+            'Análisis de procesos actuales',
+            'Diseño de flujos de automatización',
+            'Implementación completa en n8n',
+            'Pruebas exhaustivas',
+            'Capacitación para tu equipo',
+            '30 días de soporte y ajustes',
+            'Documentación detallada',
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-600 flex-shrink-0 mt-0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="/contacto"
+          class="inline-block bg-brand-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-700 transform hover:scale-105 transition-all"
+        >
+          Solicitar Cotización
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTASection
+    title="¿Listo para automatizar tu negocio?"
+    subtitle="Agenda una consulta gratis y te mostraré cómo automatizar tus procesos"
+    buttonText="Consulta Gratis"
+    buttonLink="/contacto"
+    secondaryButtonText="Ver Más Servicios"
+    secondaryButtonLink="/servicios"
+  />
+
+  <Footer />
+</BaseLayout>

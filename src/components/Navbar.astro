@@ -1,0 +1,198 @@
+---
+/**
+ * Navbar.astro
+ * Navbar sticky con glassmorphism, blur effect y shrink on scroll
+ */
+
+import { site } from '../data/config.js';
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- Navbar fijo con glassmorphism -->
+<nav 
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
+  style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20 transition-all duration-300" id="navbar-content">
+      
+      <!-- 🎨 Logo con animación hover -->
+      <a href="/" class="flex items-center space-x-2 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand to-brand-800 rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-hover:shadow-brand">
+          <span class="text-white font-bold text-xl">BM</span>
+        </div>
+        <span class="font-heading font-bold text-xl text-dark-900 hidden sm:block group-hover:text-brand transition-colors duration-300">
+          Benjamin <span class="text-brand">Mardones</span>
+        </span>
+      </a>
+
+      <!-- 🖥️ Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-1">
+        {site.navigation.main.map((link) => (
+          <a
+            href={link.href}
+            class={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+              currentPath === link.href
+                ? 'text-brand bg-brand/10'
+                : 'text-dark-900 hover:text-brand hover:bg-brand/5'
+            }`}
+          >
+            {link.text}
+            <!-- Underline animado -->
+            <span class="absolute bottom-1 left-1/2 w-0 h-0.5 bg-brand transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></span>
+          </a>
+        ))}
+        <!-- CTA Button con pulse effect -->
+        <a
+          href="/contacto"
+          class="ml-4 px-6 py-2.5 bg-brand text-white rounded-lg font-semibold hover:bg-brand-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-brand animate-pulse-slow"
+        >
+          Cotizar Proyecto
+        </a>
+      </div>
+
+      <!-- 📱 Mobile Menu Button con animación -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-lg text-dark-900 hover:bg-brand/10 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <!-- Hamburger icon con animación -->
+        <div class="w-6 h-5 flex flex-col justify-between">
+          <span class="w-full h-0.5 bg-current transform transition-all duration-300" id="menu-line-1"></span>
+          <span class="w-full h-0.5 bg-current transform transition-all duration-300" id="menu-line-2"></span>
+          <span class="w-full h-0.5 bg-current transform transition-all duration-300" id="menu-line-3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- 📱 Mobile Menu -->
+  <div 
+    id="mobile-menu" 
+    class="md:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-300 max-h-0 opacity-0"
+    style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+  >
+    <div class="px-4 py-4 space-y-2">
+      {site.navigation.main.map((link, index) => (
+        <a
+          href={link.href}
+          class={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:translate-x-2 ${
+            currentPath === link.href
+              ? 'text-brand bg-brand/10'
+              : 'text-dark-900 hover:bg-brand/5'
+          }`}
+          style={`animation-delay: ${index * 50}ms`}
+        >
+          {link.text}
+        </a>
+      ))}
+      <a
+        href="/contacto"
+        class="block px-4 py-3 bg-brand text-white rounded-lg font-semibold text-center hover:bg-brand-700 transition-all duration-300 transform hover:scale-105 shadow-md"
+      >
+        Cotizar Proyecto
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer dinámico -->
+<div id="navbar-spacer" class="h-20 transition-all duration-300"></div>
+
+<script>
+  // 🎬 Navbar con shrink on scroll y animaciones suaves
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    const navbarContent = document.getElementById('navbar-content');
+    const navbarSpacer = document.getElementById('navbar-spacer');
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLines = [
+      document.getElementById('menu-line-1'),
+      document.getElementById('menu-line-2'),
+      document.getElementById('menu-line-3'),
+    ];
+    
+    let isMenuOpen = false;
+    let lastScroll = 0;
+    
+    // 📜 Shrink navbar on scroll con debounce para performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScroll = window.pageYOffset;
+          
+          if (currentScroll > 50) {
+            // Navbar reducido y con sombra
+            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            navbarContent.classList.add('h-16');
+            navbarContent.classList.remove('h-20');
+            navbarSpacer.classList.add('h-16');
+            navbarSpacer.classList.remove('h-20');
+          } else {
+            // Navbar tamaño normal
+            navbar.style.boxShadow = 'none';
+            navbarContent.classList.add('h-20');
+            navbarContent.classList.remove('h-16');
+            navbarSpacer.classList.add('h-20');
+            navbarSpacer.classList.remove('h-16');
+          }
+          
+          lastScroll = currentScroll;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // 📱 Toggle mobile menu con animación hamburger
+    menuButton?.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      menuButton.setAttribute('aria-expanded', isMenuOpen.toString());
+      
+      if (isMenuOpen) {
+        // Abrir menú
+        mobileMenu.style.maxHeight = '400px';
+        mobileMenu.style.opacity = '1';
+        
+        // Animar hamburger a X
+        menuLines[0].style.transform = 'rotate(45deg) translateY(8px)';
+        menuLines[1].style.opacity = '0';
+        menuLines[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+      } else {
+        // Cerrar menú
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        
+        // Restaurar hamburger
+        menuLines[0].style.transform = 'none';
+        menuLines[1].style.opacity = '1';
+        menuLines[2].style.transform = 'none';
+      }
+    });
+    
+    // 🔗 Cerrar menú al hacer clic en un link
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) {
+          menuButton?.click();
+        }
+      });
+    });
+    
+    // 📐 Cerrar menú en resize a desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        menuButton?.click();
+      }
+    });
+  });
+</script>

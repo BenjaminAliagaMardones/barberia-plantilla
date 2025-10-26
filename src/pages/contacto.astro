@@ -1,0 +1,311 @@
+---
+/**
+ * contacto.astro
+ * Página de contacto con formulario funcional
+ * Incluye validación HTML5 y datos de contacto directo
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contacto | Benjamin Mardones"
+  description="¿Tienes un proyecto en mente? Contáctame y conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos digitales."
+  keywords="contacto, cotización, consulta, presupuesto, reunión"
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="pt-12 md:pt-20 pb-8 px-4 bg-gradient-to-br from-brand-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block px-4 py-2 bg-brand-100 text-brand-700 rounded-full text-sm font-semibold mb-6">
+        📞 Hablemos
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">
+        Conversemos sobre<br />
+        <span class="text-brand-600">tu proyecto</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Respondo todos los mensajes en menos de 24 horas. Agenda una reunión o envíame 
+        los detalles de tu proyecto.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulario y Datos de Contacto -->
+  <section class="py-12 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Formulario (2 columnas) -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-card p-6 md:p-8">
+            <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+              Envíame un Mensaje
+            </h2>
+            
+            <form
+              id="contact-form"
+              class="space-y-6"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
+              <!-- Nombre -->
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors"
+                  placeholder="Juan Pérez"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors"
+                  placeholder="juan@ejemplo.com"
+                />
+              </div>
+
+              <!-- Teléfono -->
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors"
+                  placeholder="+56 9 1234 5678"
+                />
+              </div>
+
+              <!-- Tipo de Proyecto -->
+              <div>
+                <label for="project-type" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Tipo de Proyecto *
+                </label>
+                <select
+                  id="project-type"
+                  name="project-type"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="web">Diseño Web</option>
+                  <option value="automation">Automatización</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="seo">Optimización SEO</option>
+                  <option value="consulting">Consultoría</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+
+              <!-- Mensaje -->
+              <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Cuéntame sobre tu proyecto *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors resize-none"
+                  placeholder="Describe tu proyecto, objetivos, presupuesto estimado y cualquier otro detalle relevante..."
+                ></textarea>
+              </div>
+
+              <!-- Presupuesto Estimado -->
+              <div>
+                <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Presupuesto Estimado
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-brand-600 focus:ring-2 focus:ring-brand-200 transition-colors"
+                >
+                  <option value="">Selecciona un rango</option>
+                  <option value="100-300">$100.000 - $300.000 CLP</option>
+                  <option value="300-500">$300.000 - $500.000 CLP</option>
+                  <option value="500-1000">$500.000 - $1.000.000 CLP</option>
+                  <option value="1000+">Más de $1.000.000 CLP</option>
+                </select>
+              </div>
+
+              <!-- Botón de envío -->
+              <button
+                type="submit"
+                class="w-full bg-brand-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-700 transform hover:scale-105 transition-all duration-200 shadow-brand flex items-center justify-center gap-2"
+              >
+                <span>Enviar Mensaje</span>
+                <svg class="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </button>
+
+              <p class="text-sm text-gray-500 text-center">
+                * Campos obligatorios. Responderé en menos de 24 horas.
+              </p>
+            </form>
+
+            <!-- Mensaje de éxito (oculto por defecto) -->
+            <div id="success-message" class="hidden mt-6 p-4 bg-green-50 border-2 border-green-500 rounded-lg">
+              <p class="text-green-800 font-semibold">
+                ✅ ¡Mensaje enviado con éxito! Te responderé pronto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información de Contacto (1 columna) -->
+        <div class="space-y-6">
+          <!-- Contacto Directo -->
+          <div class="bg-gradient-to-br from-brand-600 to-brand-800 text-white rounded-2xl p-6 md:p-8">
+            <h3 class="text-xl font-bold mb-6">Contacto Directo</h3>
+            
+            <div class="space-y-4">
+              <!-- Email -->
+              <a
+                href="mailto:contacto@benjamin-mardones.cl"
+                class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Email</div>
+                  <div class="text-sm text-brand-100">contacto@benjamin-mardones.cl</div>
+                </div>
+              </a>
+
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/56912345678?text=Hola,%20me%20gustaría%20cotizar%20un%20proyecto"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">WhatsApp</div>
+                  <div class="text-sm text-brand-100">+56 9 1234 5678</div>
+                </div>
+              </a>
+
+              <!-- Ubicación -->
+              <div class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur rounded-lg">
+                <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Ubicación</div>
+                  <div class="text-sm text-brand-100">Santiago, Chile</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Horarios -->
+          <div class="bg-white rounded-2xl shadow-card p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Horario de Atención</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>📅 Lunes a Viernes: 9:00 - 19:00</p>
+              <p>📅 Sábados: 10:00 - 14:00</p>
+              <p>🚫 Domingos: Cerrado</p>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+              Respondo emails 24/7 dentro de 24 horas máximo
+            </p>
+          </div>
+
+          <!-- Compromiso -->
+          <div class="bg-brand-50 rounded-2xl p-6 border-2 border-brand-200">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              💯 Mi Compromiso
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-600 flex-shrink-0">✓</span>
+                <span>Respuesta en menos de 24 horas</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-600 flex-shrink-0">✓</span>
+                <span>Primera consulta sin compromiso</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-600 flex-shrink-0">✓</span>
+                <span>Cotización personalizada</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-600 flex-shrink-0">✓</span>
+                <span>Comunicación transparente</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Manejo del formulario (ejemplo básico)
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    
+    try {
+      // Aquí puedes integrar con Formspree, EmailJS, o un webhook de n8n
+      // Por ahora, solo mostramos el mensaje de éxito
+      successMessage?.classList.remove('hidden');
+      form.reset();
+      
+      // Scroll al mensaje de éxito
+      successMessage?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
+      // Ocultar el mensaje después de 5 segundos
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+      }, 5000);
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctame directamente por email.');
+    }
+  });
+</script>

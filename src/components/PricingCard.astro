@@ -1,0 +1,73 @@
+---
+/**
+ * PricingCard.astro
+ * Tarjeta de plan de precios con efecto destacado para "Más Popular"
+ */
+
+interface Props {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  cta: string;
+  link: string;
+  popular?: boolean;
+  featured?: boolean;
+}
+
+const { name, price, period, description, features, cta, link, popular = false, featured = false } = Astro.props;
+---
+
+<div
+  class={`relative p-8 rounded-2xl border-2 transition-all duration-500 ${
+    popular 
+      ? 'border-brand-500 bg-gradient-to-br from-brand-50 to-white shadow-brand-lg scale-105 z-10' 
+      : 'border-gray-200 bg-white hover:border-brand-300 hover:shadow-card-hover hover:-translate-y-1'
+  }`}
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  <!-- Badge "Más Popular" -->
+  {popular && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-brand-600 to-brand-500 text-white text-sm font-semibold rounded-full shadow-brand">
+      ⭐ Más Popular
+    </div>
+  )}
+
+  <!-- Contenido del plan -->
+  <div class="text-center mb-6">
+    <h3 class="text-2xl font-bold text-neutral-900 mb-2">{name}</h3>
+    <p class="text-neutral-600 text-sm mb-4">{description}</p>
+    
+    <!-- Precio -->
+    <div class="flex items-baseline justify-center gap-1 mb-1">
+      <span class="text-5xl font-bold text-brand-600">{price}</span>
+      <span class="text-neutral-500 text-lg">/{period}</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <ul class="space-y-3 mb-8">
+    {features.map((feature) => (
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M5 13l4 4L19 7"/>
+        </svg>
+        <span class="text-neutral-700 text-sm leading-relaxed">{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  <!-- CTA Button -->
+  <a
+    href={link}
+    class={`block w-full text-center py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 ${
+      popular
+        ? 'bg-brand-600 text-white hover:bg-brand-700 hover:shadow-brand hover:scale-105 active:scale-95'
+        : 'bg-neutral-100 text-brand-600 hover:bg-brand-600 hover:text-white hover:shadow-brand hover:scale-105 active:scale-95'
+    }`}
+  >
+    {cta}
+  </a>
+</div>

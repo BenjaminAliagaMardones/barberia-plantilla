@@ -1,0 +1,212 @@
+---
+/**
+ * desarrollo-digital.astro
+ * Página de detalle del servicio "Desarrollo Digital"
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Desarrollo Digital a Medida | Benjamin Mardones"
+  description="Soluciones digitales personalizadas para necesidades específicas de tu negocio. Aplicaciones web, integraciones y más."
+  keywords="desarrollo digital, aplicaciones web, soluciones personalizadas, desarrollo a medida"
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-12 md:pt-20 pb-12 px-4 bg-gradient-to-br from-brand-600 to-brand-800 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center space-y-6">
+        <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          💻 Desarrollo Digital
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+          Soluciones Digitales
+          <span class="block mt-2">A Tu Medida</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-brand-100 max-w-3xl mx-auto leading-relaxed">
+          Desarrollo aplicaciones web y soluciones personalizadas que se adaptan perfectamente 
+          a las necesidades únicas de tu negocio.
+        </p>
+
+        <a
+          href="/contacto"
+          class="inline-block bg-white text-brand-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all shadow-xl"
+        >
+          Cuéntame Tu Idea
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué Puedo Desarrollar -->
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          ¿Qué Puedo Desarrollar?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Soluciones personalizadas para cada tipo de negocio
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            icon: '🖥️',
+            title: 'Aplicaciones Web',
+            description: 'Sistemas internos, CRMs personalizados, paneles de administración y más.',
+            examples: ['Dashboard de métricas', 'Sistema de inventario', 'Portal de clientes'],
+          },
+          {
+            icon: '🔗',
+            title: 'Integraciones API',
+            description: 'Conecto tus sistemas existentes para que trabajen juntos sin problemas.',
+            examples: ['Integración con ERP', 'Sync con contabilidad', 'APIs de terceros'],
+          },
+          {
+            icon: '📊',
+            title: 'Herramientas Internas',
+            description: 'Herramientas específicas que optimizan procesos únicos de tu empresa.',
+            examples: ['Calculadoras personalizadas', 'Generadores de reportes', 'Validadores'],
+          },
+          {
+            icon: '🎯',
+            title: 'Landing Pages Especializadas',
+            description: 'Páginas de aterrizaje optimizadas para campañas específicas.',
+            examples: ['Landings de campaña', 'Páginas de captura', 'Micrositios'],
+          },
+        ].map((solution) => (
+          <div class="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200 hover:border-brand-600 hover:shadow-card transition-all">
+            <div class="text-5xl mb-4">{solution.icon}</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">{solution.description}</p>
+            <div class="space-y-2">
+              <div class="text-sm font-semibold text-gray-700 mb-2">Ejemplos:</div>
+              {solution.examples.map((example) => (
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                  <div class="w-1.5 h-1.5 bg-brand-600 rounded-full"></div>
+                  {example}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          ¿Cómo Trabajamos?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Un proceso ágil y colaborativo
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          {
+            step: '1',
+            title: 'Descubrimiento',
+            description: 'Entendemos tu problema y definimos los requisitos.',
+          },
+          {
+            step: '2',
+            title: 'Propuesta',
+            description: 'Te presento la solución técnica y el presupuesto.',
+          },
+          {
+            step: '3',
+            title: 'Desarrollo Iterativo',
+            description: 'Desarrollo en sprints con demos frecuentes.',
+          },
+          {
+            step: '4',
+            title: 'Lanzamiento',
+            description: 'Desplegamos y capacitamos a tu equipo.',
+          },
+        ].map((phase) => (
+          <div class="text-center">
+            <div class="w-16 h-16 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4">
+              {phase.step}
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">{phase.title}</h3>
+            <p class="text-sm text-gray-600">{phase.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+        Inversión
+      </h2>
+      
+      <div class="bg-gradient-to-br from-brand-50 to-white rounded-2xl p-8 md:p-12 border-2 border-brand-200 max-w-2xl mx-auto">
+        <div class="text-5xl font-bold text-brand-600 mb-4">Desde $399.990</div>
+        <p class="text-lg text-gray-600 mb-8">
+          El precio varía según la complejidad del proyecto. Todos los proyectos incluyen:
+        </p>
+        
+        <ul class="text-left space-y-3 mb-8 max-w-md mx-auto">
+          {[
+            'Análisis detallado de requisitos',
+            'Arquitectura y diseño técnico',
+            'Desarrollo con código limpio',
+            'Pruebas de calidad',
+            'Documentación completa',
+            'Capacitación del equipo',
+            'Soporte post-lanzamiento',
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-600 flex-shrink-0 mt-0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="text-sm text-gray-600 mb-6">
+          💡 Ofrezco paquetes de horas para proyectos más pequeños o mantenimiento continuo
+        </p>
+
+        <a
+          href="/contacto"
+          class="inline-block bg-brand-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-700 transform hover:scale-105 transition-all"
+        >
+          Solicitar Cotización
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTASection
+    title="¿Tienes una idea en mente?"
+    subtitle="Conversemos sobre tu proyecto y veamos cómo puedo ayudarte a hacerla realidad"
+    buttonText="Agendar Reunión"
+    buttonLink="/contacto"
+    secondaryButtonText="Ver Más Servicios"
+    secondaryButtonLink="/servicios"
+  />
+
+  <Footer />
+</BaseLayout>

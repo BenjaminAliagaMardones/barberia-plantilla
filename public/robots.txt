@@ -1,0 +1,15 @@
+# robots.txt
+# Permite a todos los motores de búsqueda indexar el sitio
+
+User-agent: *
+Allow: /
+
+# Disallow admin o áreas privadas (si existen)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap
+Sitemap: https://tu-dominio.cl/sitemap.xml
+
+# Crawl-delay para bots agresivos (opcional)
+# Crawl-delay: 10

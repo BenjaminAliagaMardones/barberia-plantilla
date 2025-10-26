@@ -1,0 +1,110 @@
+---
+/**
+ * CTASection.astro
+ * Sección de Call-to-Action destacada con fondo degradado
+ * Incluye título, subtítulo y botones de acción
+ */
+
+interface Props {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonLink: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
+}
+
+const {
+  title,
+  subtitle,
+  buttonText,
+  buttonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
+} = Astro.props;
+---
+
+<section class="relative py-16 md:py-20 px-4 bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 text-white overflow-hidden">
+  <!-- Decoración de fondo mejorada -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-1/2 -right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-wave"></div>
+    <div class="absolute -bottom-1/2 -left-1/4 w-96 h-96 bg-brand-400/20 rounded-full blur-3xl animate-wave" style="animation-delay: 7s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
+    
+    <!-- Grid pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="container-custom max-w-4xl mx-auto text-center relative z-10">
+    <h2 
+      data-aos="fade-up"
+      class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 drop-shadow-lg"
+    >
+      {title}
+    </h2>
+    <p 
+      data-aos="fade-up"
+      data-aos-delay="100"
+      class="text-lg md:text-xl text-brand-100 mb-10 max-w-2xl mx-auto leading-relaxed"
+    >
+      {subtitle}
+    </p>
+
+    <!-- Botones con animaciones mejoradas -->
+    <div 
+      data-aos="zoom-in"
+      data-aos-delay="200"
+      class="flex flex-col sm:flex-row gap-4 justify-center"
+    >
+      <a
+        href={buttonLink}
+        class="group relative inline-flex items-center justify-center bg-white text-brand-600 px-8 py-4 min-h-[56px] rounded-xl font-semibold text-lg overflow-hidden shadow-2xl hover:shadow-accent transition-all duration-300 hover:-translate-y-1 animate-pulse-btn"
+      >
+        <!-- Efecto glow en hover -->
+        <span class="absolute inset-0 bg-gradient-to-r from-accent-400 to-brand-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+        
+        <!-- Texto con animación -->
+        <span class="relative z-10 flex items-center">
+          {buttonText}
+          <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+        
+        <!-- Ripple effect -->
+        <span class="absolute inset-0 scale-0 group-hover:scale-100 bg-white/10 rounded-xl transition-transform duration-500"></span>
+      </a>
+      
+      {secondaryButtonText && secondaryButtonLink && (
+        <a
+          href={secondaryButtonLink}
+          class="group relative inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 min-h-[56px] rounded-xl font-semibold text-lg hover:bg-white hover:text-brand-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden"
+        >
+          <!-- Background slide effect -->
+          <span class="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+          
+          <!-- Texto -->
+          <span class="relative z-10 flex items-center">
+            {secondaryButtonText}
+            <svg class="w-5 h-5 ml-2 transform group-hover:rotate-45 transition-transform duration-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </span>
+        </a>
+      )}
+    </div>
+
+    <!-- Badge decorativo opcional -->
+    <div 
+      data-aos="fade-up"
+      data-aos-delay="300"
+      class="mt-8 inline-flex items-center gap-2 text-brand-100 text-sm"
+    >
+      <svg class="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <span>Respuesta en menos de 24 horas</span>
+    </div>
+  </div>
+</section>

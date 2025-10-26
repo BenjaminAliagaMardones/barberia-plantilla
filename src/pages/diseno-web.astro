@@ -1,0 +1,362 @@
+---
+/**
+ * diseno-web.astro
+ * Página de detalle del servicio "Diseño Web"
+ * Landing optimizada para conversión con toda la información del servicio
+ */
+
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Diseño Web Profesional | Benjamin Mardones"
+  description="Sitios web modernos, responsivos y optimizados para SEO. Diseños que convierten visitantes en clientes para tu negocio local."
+  keywords="diseño web, sitio web profesional, desarrollo web, web responsiva, landing page"
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-12 md:pt-20 pb-12 px-4 bg-gradient-to-br from-brand-600 to-brand-800 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center space-y-6">
+        <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          🎨 Diseño Web Profesional
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+          Sitios Web Que Generan
+          <span class="block mt-2">Resultados Reales</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-brand-100 max-w-3xl mx-auto leading-relaxed">
+          Diseño sitios web modernos, responsivos y optimizados que no solo se ven increíbles, 
+          sino que convierten visitantes en clientes y generan ingresos para tu negocio.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <a
+            href="/contacto"
+            class="inline-block bg-white text-brand-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all shadow-xl"
+          >
+            Solicitar Cotización
+          </a>
+          <a
+            href="#incluye"
+            class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all"
+          >
+            Ver Qué Incluye
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué Incluye -->
+  <section class="py-16 md:py-20 px-4 bg-white" id="incluye">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          ¿Qué Incluye Este Servicio?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Un paquete completo para que tu sitio web sea un éxito desde el primer día
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '🎨',
+            title: 'Diseño Personalizado',
+            description: 'Diseño único adaptado a tu marca, sin plantillas genéricas.',
+          },
+          {
+            icon: '📱',
+            title: 'Diseño Responsivo',
+            description: 'Perfecto en móviles, tablets y computadoras de escritorio.',
+          },
+          {
+            icon: '⚡',
+            title: 'Optimización de Velocidad',
+            description: 'Carga rápida para mejor experiencia y posicionamiento.',
+          },
+          {
+            icon: '🔍',
+            title: 'SEO Básico',
+            description: 'Configuración inicial para aparecer en Google.',
+          },
+          {
+            icon: '📊',
+            title: 'Google Analytics',
+            description: 'Instalación y configuración de analíticas para medir resultados.',
+          },
+          {
+            icon: '📝',
+            title: 'Formulario de Contacto',
+            description: 'Recibe consultas directo a tu email.',
+          },
+          {
+            icon: '🔒',
+            title: 'Certificado SSL',
+            description: 'Sitio seguro con HTTPS incluido.',
+          },
+          {
+            icon: '🎓',
+            title: 'Capacitación',
+            description: 'Te enseño a actualizar el contenido fácilmente.',
+          },
+          {
+            icon: '🛠️',
+            title: 'Soporte 30 Días',
+            description: 'Un mes de soporte incluido para ajustes.',
+          },
+        ].map((item) => (
+          <div class="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-brand-600 transition-colors">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          Beneficios Para Tu Negocio
+        </h2>
+        <p class="text-lg text-gray-600">
+          Un sitio web profesional es una inversión que se paga sola
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            title: 'Más Clientes',
+            description: 'Un sitio web atractivo y fácil de usar convierte más visitantes en clientes potenciales.',
+            color: 'bg-blue-50 border-blue-200',
+          },
+          {
+            title: 'Disponibilidad 24/7',
+            description: 'Tu negocio nunca cierra. Los clientes pueden conocerte y contactarte en cualquier momento.',
+            color: 'bg-green-50 border-green-200',
+          },
+          {
+            title: 'Credibilidad Profesional',
+            description: 'Un sitio web moderno genera confianza y te diferencia de la competencia.',
+            color: 'bg-purple-50 border-purple-200',
+          },
+          {
+            title: 'Ahorro en Marketing',
+            description: 'Un sitio optimizado atrae clientes de forma orgánica, reduciendo costos publicitarios.',
+            color: 'bg-orange-50 border-orange-200',
+          },
+        ].map((benefit) => (
+          <div class={`p-8 rounded-2xl border-2 ${benefit.color}`}>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          Proceso de Trabajo
+        </h2>
+        <p class="text-lg text-gray-600">
+          Un proceso simple y transparente en 4 pasos
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-200"></div>
+        
+        <div class="space-y-12">
+          {[
+            {
+              step: '1',
+              title: 'Reunión y Briefing',
+              description: 'Conversamos sobre tu negocio, objetivos, público y referencias de diseño que te gusten.',
+              duration: '1 día',
+            },
+            {
+              step: '2',
+              title: 'Diseño y Propuesta',
+              description: 'Creo el diseño inicial del sitio y te lo presento para recibir feedback.',
+              duration: '3-5 días',
+            },
+            {
+              step: '3',
+              title: 'Desarrollo',
+              description: 'Codifico el sitio web con todas las funcionalidades acordadas.',
+              duration: '7-10 días',
+            },
+            {
+              step: '4',
+              title: 'Lanzamiento',
+              description: 'Publicamos el sitio, configuramos dominios y te capacito en su uso.',
+              duration: '1-2 días',
+            },
+          ].map((phase, index) => (
+            <div class={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div class="flex-1 md:text-right">
+                <div class={`bg-white p-6 rounded-xl shadow-card ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+                  <div class="text-sm text-brand-600 font-semibold mb-2">Paso {phase.step}</div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">{phase.title}</h3>
+                  <p class="text-gray-600 mb-3">{phase.description}</p>
+                  <div class="text-sm text-gray-500">⏱️ Duración: {phase.duration}</div>
+                </div>
+              </div>
+              
+              <div class="flex-shrink-0 w-16 h-16 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-2xl z-10">
+                {phase.step}
+              </div>
+              
+              <div class="flex-1"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-6 bg-brand-50 rounded-xl border-2 border-brand-200">
+        <p class="text-gray-700 font-medium">
+          ⏰ <strong>Tiempo total estimado:</strong> 2-3 semanas desde el inicio hasta el lanzamiento
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonio Relacionado -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">
+          Caso de Éxito Real
+        </h2>
+      </div>
+      
+      <TestimonialCard
+        name="María González"
+        role="Dueña de Cafetería Local"
+        text="Antes de trabajar con Benjamin, solo teníamos una página de Facebook. Ahora tenemos un sitio web hermoso que nos trae clientes nuevos cada semana. Las ventas aumentaron un 40% en los primeros 3 meses."
+        image="https://i.pravatar.cc/150?img=5"
+        rating={5}
+      />
+    </div>
+  </section>
+
+  <!-- Precios -->
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+          Inversión
+        </h2>
+        <p class="text-lg text-gray-600">
+          Planes flexibles según tus necesidades
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            name: 'Sitio Básico',
+            price: '$299.990',
+            features: [
+              'Hasta 5 páginas',
+              'Diseño responsivo',
+              'Formulario de contacto',
+              'SEO básico',
+              'Google Analytics',
+              'Certificado SSL',
+              '30 días de soporte',
+            ],
+            highlighted: false,
+          },
+          {
+            name: 'Sitio Completo',
+            price: '$499.990',
+            features: [
+              'Hasta 10 páginas',
+              'Diseño premium personalizado',
+              'Blog integrado',
+              'SEO avanzado',
+              'Integraciones (WhatsApp, Maps)',
+              'Google Analytics + Search Console',
+              '60 días de soporte',
+              'Mantenimiento mensual incluido (3 meses)',
+            ],
+            highlighted: true,
+          },
+        ].map((plan) => (
+          <div class={`rounded-2xl p-8 ${plan.highlighted ? 'bg-brand-600 text-white shadow-brand transform scale-105' : 'bg-gray-50 text-gray-900 border-2 border-gray-200'}`}>
+            {plan.highlighted && (
+              <div class="text-center mb-4">
+                <span class="bg-white text-brand-600 px-4 py-1 rounded-full text-sm font-bold">
+                  Más Popular
+                </span>
+              </div>
+            )}
+            
+            <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+            <div class="text-4xl font-bold mb-6">{plan.price}</div>
+            
+            <ul class="space-y-3 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-white' : 'text-brand-600'}`} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="/contacto"
+              class={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
+                plan.highlighted
+                  ? 'bg-white text-brand-600 hover:bg-gray-100'
+                  : 'bg-brand-600 text-white hover:bg-brand-700'
+              }`}
+            >
+              Cotizar Ahora
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-600 mt-8">
+        💳 Facilidades de pago disponibles | 🎯 Garantía de satisfacción
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTASection
+    title="¿Listo para tener tu sitio web profesional?"
+    subtitle="Conversemos sobre tu proyecto sin compromiso. Respondo en menos de 24 horas"
+    buttonText="Solicitar Cotización"
+    buttonLink="/contacto"
+    secondaryButtonText="Ver Más Servicios"
+    secondaryButtonLink="/servicios"
+  />
+
+  <Footer />
+</BaseLayout>
