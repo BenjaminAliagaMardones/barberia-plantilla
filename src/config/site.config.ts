@@ -1,7 +1,12 @@
 /**
  * 📝 Configuración Global del Sitio
  * 
- * ⚙️ Personaliza estos valores para adaptar la plantilla a tu negocio
+ * ⚙️ Personaliza estos valores para adaptar la planti    'Degradado y Fade',
+    'Barba y Afeitado Profesional',
+    'Perfilado de Barba',
+    'Paquetes Premium',
+    'Tratamientos Capilares',
+  },tu negocio
  * 
  * 🎯 INSTRUCCIONES:
  * 1. Cambia los valores según tu negocio
@@ -11,14 +16,14 @@
 
 export const siteConfig = {
   // 🏢 Información del Negocio
-  name: 'Benjamin Mardones',
-  businessName: 'Servicios Digitales',
-  tagline: 'Soluciones Digitales para Negocios Locales',
-  description: 'Diseño web, automatización y desarrollo digital para PYMEs locales. Soluciones profesionales que generan resultados reales.',
+  name: 'Barbería Premium Temuco',
+  businessName: 'Barbería Premium',
+  tagline: 'Cortes modernos. Estilo clásico.',
+  description: 'Barbería profesional en Temuco con más de 5 años de experiencia. Servicios de corte, barba y cuidado masculino con atención personalizada y productos premium.',
   
   // 🌐 URLs y Dominios
-  url: 'https://tudominio.cl', // 👈 Cambiar por tu dominio real
-  author: 'Benjamin Mardones',
+  url: 'https://barberiatemuco.cl',
+  author: 'Barbería Premium Temuco',
   
   // 📍 Localización (SEO Local)
   location: {
@@ -26,78 +31,78 @@ export const siteConfig = {
     region: 'La Araucanía',
     country: 'Chile',
     countryCode: 'CL',
-    regionCode: 'CL-AR', // Código ISO 3166-2
+    regionCode: 'CL-AR',
     postalCode: '4780000',
-    address: 'Avenida Ejemplo 123', // 👈 Cambiar por tu dirección real
+    address: 'Av. Alemania 685, Temuco',
     coordinates: {
-      latitude: -38.7359,  // 👈 Cambiar por tu ubicación real
+      latitude: -38.7359,
       longitude: -72.5904,
     },
   },
   
   // 📞 Información de Contacto
   contact: {
-    phone: '+56 9 1234 5678', // 👈 Cambiar por tu número real
-    phoneRaw: '+56912345678', // Sin espacios para enlaces
-    email: 'contacto@tudominio.cl', // 👈 Cambiar por tu email real
-    whatsapp: '+56912345678', // 👈 Cambiar por tu WhatsApp
-    whatsappMessage: '¡Hola! Me interesa conocer más sobre sus servicios digitales.',
+    phone: '+56 9 8765 4321',
+    phoneRaw: '+56987654321',
+    email: 'contacto@barberiatemuco.cl',
+    whatsapp: '+56987654321',
+    whatsappMessage: 'Hola, quiero agendar una hora en la barbería',
   },
   
   // 🕐 Horario de Atención
   businessHours: {
-    weekdays: 'Lunes a Viernes: 9:00 - 18:00',
-    weekend: 'Sábado: 10:00 - 14:00',
+    weekdays: 'Lunes a Viernes: 10:00 - 20:00',
+    weekend: 'Sábado: 10:00 - 18:00',
     closed: 'Domingo: Cerrado',
     timezone: 'America/Santiago',
   },
   
   // 🔗 Redes Sociales
   social: {
-    github: 'https://github.com/BenjaminAliagaMardones', // 👈 Cambiar por tu perfil
-    linkedin: 'https://linkedin.com/in/tuperfil', // 👈 Cambiar por tu perfil
-    twitter: 'https://twitter.com/tuperfil', // 👈 Cambiar por tu perfil
-    instagram: 'https://instagram.com/tuperfil', // 👈 Opcional
-    facebook: 'https://facebook.com/tupagina', // 👈 Opcional
+    github: '',
+    linkedin: '',
+    twitter: '',
+    instagram: 'https://instagram.com/barberiatemuco',
+    facebook: 'https://facebook.com/barberiatemuco',
   },
   
   // 🎨 Configuración de Marca
   brand: {
-    primaryColor: '#2563eb', // Azul corporativo
-    accentColor: '#f97316',  // Naranja acento
+    primaryColor: '#1A1A1A', // Negro elegante
+    accentColor: '#D4AF37',  // Dorado premium
     logo: '/logo.svg',
-    ogImage: '/og-image.jpg', // Imagen para redes sociales (1200x630px)
+    ogImage: '/og-barberia.jpg',
   },
   
   // 📊 Analytics y Tracking
   analytics: {
-    googleAnalyticsId: '', // 👈 Agregar tu ID de GA4 (ej: G-XXXXXXXXXX)
-    facebookPixelId: '',   // 👈 Opcional
-    hotjarId: '',          // 👈 Opcional
+    googleAnalyticsId: '',
+    facebookPixelId: '',
+    hotjarId: '',
   },
   
   // 📝 SEO
   seo: {
     keywords: [
-      'diseño web',
-      'automatización',
-      'desarrollo digital',
-      'negocios locales',
-      'pymes',
-      'freelance',
-      'temuco',
-      'chile',
-      'páginas web',
-      'transformación digital',
+      'barbería Temuco',
+      'barbería premium',
+      'corte de pelo Temuco',
+      'barba Temuco',
+      'peluquería hombre',
+      'degradado fade',
+      'afeitado navaja',
+      'barbero profesional',
+      'corte masculino',
+      'barbería La Araucanía',
     ],
     locale: 'es_CL',
-    twitterHandle: '@tuperfil', // 👈 Cambiar por tu usuario
+    twitterHandle: '@barberiatemuco',
   },
   
   // 🎯 Servicios Principales (para meta tags y schema)
   services: [
-    'Diseño Web Profesional',
-    'Automatización con n8n',
+    'Corte de Pelo Profesional',
+    'Degradado y Fade',
     'Desarrollo Digital a Medida',
     'Optimización SEO Local',
     'E-commerce',

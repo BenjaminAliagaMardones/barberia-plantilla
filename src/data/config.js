@@ -1,59 +1,59 @@
 /**
  * config.js
- * Configuración centralizada del sitio
+ * Configuración centralizada del sitio - Barbería Premium Temuco
  * EDITABLE FÁCILMENTE para cada cliente
  */
 
 export const site = {
   // 🏢 Información del negocio
   business: {
-    name: "Benjamin Mardones",
-    tagline: "Servicios Digitales",
-    description: "Soluciones digitales profesionales para negocios locales. Transformo ideas en experiencias web memorables.",
-    phone: "+56 9 1234 5678",
-    phoneDisplay: "+56 9 1234 5678",
-    email: "contacto@benjamin-mardones.cl",
-    whatsapp: "56912345678",
+    name: "Barbería Premium Temuco",
+    tagline: "Cortes modernos. Estilo clásico.",
+    description: "Barbería profesional en Temuco con más de 5 años de experiencia. Ofrecemos servicios de corte, barba y cuidado masculino con atención personalizada.",
+    phone: "+56 9 8765 4321",
+    phoneDisplay: "+56 9 8765 4321",
+    email: "contacto@barberiatemuco.cl",
+    whatsapp: "56987654321",
     address: {
-      street: "Avenida Ejemplo 123",
-      city: "Santiago",
-      region: "Región Metropolitana",
+      street: "Av. Alemania 685",
+      city: "Temuco",
+      region: "La Araucanía",
       country: "Chile",
-      postalCode: "8320000"
+      postalCode: "4780000"
     },
     geo: {
-      latitude: -33.4489,
-      longitude: -70.6693
+      latitude: -38.7359,
+      longitude: -72.5904
     },
     hours: {
-      weekday: { open: "09:00", close: "18:00" },
-      weekend: { open: "10:00", close: "14:00" }
+      weekday: { open: "10:00", close: "20:00" },
+      weekend: { open: "10:00", close: "18:00" }
     }
   },
 
   // 🎨 Hero Section
   hero: {
-    badge: "🚀 Soluciones Digitales para Negocios Locales",
-    title: "Impulsa tu negocio con",
-    titleHighlight: "tecnología profesional",
-    subtitle: "Diseño sitios web modernos, automatizo procesos y creo soluciones digitales que ayudan a pequeñas empresas a crecer en el mundo digital.",
+    badge: "� Barbería Premium en Temuco",
+    title: "Cortes modernos.",
+    titleHighlight: "Estilo clásico.",
+    subtitle: "Barbería profesional en Temuco. Reserva tu hora y vive la experiencia de un servicio premium con atención personalizada.",
     ctaPrimary: {
-      text: "Ver Servicios",
-      link: "/servicios"
+      text: "Agendar Cita",
+      link: "https://wa.me/56987654321?text=Hola,%20quiero%20agendar%20una%20hora"
     },
     ctaSecondary: {
-      text: "Agendar Reunión",
-      link: "/contacto"
+      text: "Ver Servicios",
+      link: "#servicios"
     },
     stats: [
-      { value: "50+", label: "Proyectos Completados" },
-      { value: "100%", label: "Clientes Satisfechos" },
-      { value: "24h", label: "Tiempo de Respuesta" }
+      { value: "5+", label: "Años de experiencia" },
+      { value: "100+", label: "Clientes satisfechos" },
+      { value: "⭐ 4.9", label: "Calificación promedio" }
     ],
-    image: "/images/hero/workspace.svg",
-    imageAlt: "Espacio de trabajo digital moderno con laptop y código",
+    image: "/images/hero/barberia.svg",
+    imageAlt: "Barbería Premium Temuco - Cortes profesionales",
     badge2: {
-      text: "Disponible para proyectos",
+      text: "Atendiendo en Temuco",
       active: true
     }
   },
@@ -61,31 +61,31 @@ export const site = {
   // 🛠️ Servicios
   services: [
     {
-      id: "diseno-web",
-      title: "Diseño Web Profesional",
-      description: "Sitios web modernos, responsivos y optimizados para convertir visitantes en clientes.",
-      icon: "web",
-      link: "/diseno-web",
+      id: "corte-clasico",
+      title: "Corte Clásico",
+      description: "Para quienes buscan elegancia atemporal y precisión en cada detalle.",
+      icon: "scissors",
+      link: "#servicios",
       featured: true,
-      color: "blue"
+      color: "gold"
     },
     {
-      id: "automatizacion",
-      title: "Automatización con n8n",
-      description: "Crea flujos automáticos que ahorran horas de trabajo manual en tu negocio.",
-      icon: "automation",
-      link: "/automatizacion",
+      id: "degradado",
+      title: "Degradado Moderno",
+      description: "Precisión y estilo actual con degradado profesional.",
+      icon: "fade",
+      link: "#servicios",
       featured: true,
-      color: "amber"
+      color: "gold"
     },
     {
-      id: "desarrollo-digital",
-      title: "Desarrollo Digital",
-      description: "Soluciones a medida para llevar tu negocio al siguiente nivel digital.",
-      icon: "development",
-      link: "/desarrollo-digital",
+      id: "barba",
+      title: "Barba & Afeitado",
+      description: "Cuidado completo y detalle perfecto para tu barba.",
+      icon: "beard",
+      link: "#servicios",
       featured: true,
-      color: "purple"
+      color: "gold"
     }
   ],
 
@@ -93,43 +93,43 @@ export const site = {
   testimonials: [
     {
       id: 1,
-      name: "María González",
-      role: "Dueña de Café",
-      city: "Temuco, Araucanía",
-      text: "Increíble trabajo. En menos de 2 semanas tenía mi sitio funcionando y empecé a recibir pedidos online. ¡Totalmente recomendado!",
+      name: "Juan Pablo G.",
+      role: "Cliente frecuente",
+      city: "Temuco",
+      text: "Excelente atención, muy profesional. El mejor corte que me han hecho en años. Totalmente recomendado.",
       image: "/images/testimonials/avatar-1.svg",
       rating: 5,
-      company: "Café Aromático"
+      company: ""
     },
     {
       id: 2,
-      name: "Carlos Ramírez",
-      role: "Abogado Independiente",
-      city: "Valdivia, Los Ríos",
-      text: "El sitio web que diseñó es exactamente lo que necesitaba. Profesional, moderno y muy fácil de administrar. Mis clientes quedan impresionados.",
+      name: "Carlos Muñoz",
+      role: "Cliente nuevo",
+      city: "Temuco",
+      text: "El mejor corte que me han hecho. El barbero es muy detallista y profesional. El ambiente es excelente.",
       image: "/images/testimonials/avatar-2.svg",
       rating: 5,
-      company: "Estudio Jurídico CR"
+      company: ""
     },
     {
       id: 3,
-      name: "Andrea Silva",
-      role: "Emprendedora",
-      city: "Puerto Montt, Los Lagos",
-      text: "La automatización que implementó nos ahorra más de 15 horas semanales. Ahora podemos enfocarnos en hacer crecer el negocio.",
+      name: "Felipe Andrade",
+      role: "Cliente regular",
+      city: "Temuco",
+      text: "Ambiente agradable y resultados perfectos. Siempre salgo satisfecho. La atención es de primera.",
       image: "/images/testimonials/avatar-3.svg",
       rating: 5,
-      company: "Silva Consultores"
+      company: ""
     }
   ],
 
   // 💼 Planes (opcional)
   plans: [
     {
-      id: "basico",
-      name: "Básico",
-      price: "$299.990",
-      period: "pago único",
+      id: "corte-clasico",
+      name: "Corte Clásico",
+      price: "$8.000",
+      period: "por servicio",
       description: "Ideal para emprendedores y pequeños negocios",
       features: [
         "Landing page de 1 página",
@@ -147,81 +147,90 @@ export const site = {
       id: "profesional",
       name: "Profesional",
       price: "$499.990",
-      period: "pago único",
-      description: "Para negocios establecidos que buscan crecer",
+      period: "por servicio",
+      description: "Ideal para el mantenimiento regular",
       features: [
-        "Sitio web hasta 5 páginas",
-        "Diseño 100% personalizado",
-        "Blog integrado",
-        "SEO avanzado",
-        "Google Analytics",
-        "Formularios múltiples",
-        "Dominio + Hosting 12 meses",
-        "Soporte 3 meses"
+        "Corte a tijera o máquina",
+        "Lavado incluido",
+        "Peinado y acabado"
+      ],
+      cta: "Agendar",
+      link: "https://wa.me/56987654321?text=Quiero%20agendar%20un%20corte%20clásico",
+      popular: false
+    },
+    {
+      id: "degradado",
+      name: "Degradado Moderno",
+      price: "$10.000",
+      period: "por servicio",
+      description: "Estilo y precisión actual",
+      features: [
+        "Degradado high/mid/low fade",
+        "Diseño de líneas",
+        "Acabado premium"
       ],
       cta: "Más Popular",
-      link: "/contacto?plan=profesional",
+      link: "https://wa.me/56987654321?text=Quiero%20agendar%20un%20degradado",
       popular: true,
       featured: true
     },
     {
-      id: "empresarial",
-      name: "Empresarial",
-      price: "$899.990",
-      period: "pago único",
-      description: "Solución completa para empresas",
+      id: "paquete-premium",
+      name: "Paquete Premium",
+      price: "$15.000",
+      period: "por servicio",
+      description: "Experiencia completa",
       features: [
-        "Sitio web hasta 10 páginas",
-        "E-commerce básico",
-        "Automatización de procesos",
-        "Integraciones con CRM",
-        "Chat en vivo",
-        "Panel de administración",
-        "SEO premium",
-        "Dominio + Hosting 12 meses",
-        "Soporte 6 meses"
+        "Corte completo",
+        "Barba y afeitado",
+        "Lavado y tratamiento",
+        "Productos premium"
       ],
-      cta: "Contactar",
-      link: "/contacto?plan=empresarial",
+      cta: "Agendar",
+      link: "https://wa.me/56987654321?text=Quiero%20agendar%20el%20paquete%20premium",
       popular: false
     }
   ],
 
   // 📞 CTA Final
   cta: {
-    title: "¿Listo para transformar tu negocio?",
-    subtitle: "Agenda una reunión sin compromiso y conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos digitales",
+    title: "¿Listo para renovar tu estilo?",
+    subtitle: "Agenda tu hora por WhatsApp y vive la experiencia de un servicio premium con atención personalizada",
     buttonPrimary: {
-      text: "Contactar Ahora",
-      link: "/contacto"
+      text: "Agendar Hora",
+      link: "https://wa.me/56987654321?text=Hola,%20quiero%20agendar%20una%20hora"
     },
     buttonSecondary: {
-      text: "Ver Portfolio",
-      link: "/servicios"
+      text: "Ver Precios",
+      link: "#servicios"
     },
     badge: {
-      text: "Respuesta en menos de 24 horas",
-      icon: "⚡"
+      text: "Respuesta inmediata por WhatsApp",
+      icon: "✂️"
     }
   },
 
   // 🔗 Redes Sociales
   social: {
     github: {
-      url: "https://github.com/BenjaminAliagaMardones",
-      username: "@BenjaminAliagaMardones"
+      url: "",
+      username: ""
     },
     linkedin: {
-      url: "https://linkedin.com/in/benjamin-mardones",
-      username: "benjamin-mardones"
+      url: "",
+      username: ""
     },
     instagram: {
-      url: "https://instagram.com/benjamin.dev",
-      username: "@benjamin.dev"
+      url: "https://instagram.com/barberiatemuco",
+      username: "@barberiatemuco"
     },
     twitter: {
-      url: "https://twitter.com/benjamin_dev",
-      username: "@benjamin_dev"
+      url: "",
+      username: ""
+    },
+    facebook: {
+      url: "https://facebook.com/barberiatemuco",
+      username: "barberiatemuco"
     }
   },
 
@@ -229,21 +238,21 @@ export const site = {
   navigation: {
     main: [
       { text: "Inicio", href: "/", active: true },
-      { text: "Servicios", href: "/servicios" },
-      { text: "Nosotros", href: "/nosotros" },
-      { text: "Contacto", href: "/contacto" }
+      { text: "Servicios", href: "#servicios" },
+      { text: "Nosotros", href: "#nosotros" },
+      { text: "Contacto", href: "#contacto" }
     ],
     footer: {
       quickLinks: [
         { text: "Inicio", href: "/" },
-        { text: "Servicios", href: "/servicios" },
-        { text: "Nosotros", href: "/nosotros" },
-        { text: "Contacto", href: "/contacto" }
+        { text: "Servicios", href: "#servicios" },
+        { text: "Nosotros", href: "#nosotros" },
+        { text: "Contacto", href: "#contacto" }
       ],
       services: [
-        { text: "Diseño Web", href: "/diseno-web" },
-        { text: "Automatización", href: "/automatizacion" },
-        { text: "Desarrollo Digital", href: "/desarrollo-digital" }
+        { text: "Corte Clásico", href: "#servicios" },
+        { text: "Degradado", href: "#servicios" },
+        { text: "Barba & Afeitado", href: "#servicios" }
       ],
       legal: [
         { text: "Política de Privacidad", href: "/privacidad" },
@@ -255,40 +264,42 @@ export const site = {
   // 🎨 Colores y estilos (para Tailwind)
   theme: {
     colors: {
-      brand: "#2563EB",      // Azul principal
-      brandDark: "#1E40AF",  // Azul oscuro
-      accent: "#F59E0B",     // Naranja/amarillo para CTAs
-      accentDark: "#D97706"  // Naranja oscuro
+      brand: "#1A1A1A",      // Negro elegante
+      brandDark: "#0a0a0a",  // Negro profundo
+      accent: "#D4AF37",     // Dorado premium
+      accentDark: "#c09a2a"  // Dorado oscuro
     },
     fonts: {
       sans: "Inter, system-ui, sans-serif",
-      heading: "Inter, system-ui, sans-serif"
+      heading: "Poppins, Inter, system-ui, sans-serif"
     }
   },
 
   // 🔍 SEO
   seo: {
-    defaultTitle: "Servicios Digitales para Negocios | Benjamin Mardones",
-    titleTemplate: "%s | Benjamin Mardones",
-    defaultDescription: "Diseño web, automatización y desarrollo digital para PYMEs locales. Soluciones profesionales que generan resultados reales.",
-    keywords: "diseño web, automatización, desarrollo digital, negocios locales, pymes, freelance, santiago, chile",
-    ogImage: "/og-image.svg",
+    defaultTitle: "Barbería Premium Temuco | Cortes modernos y estilo clásico",
+    titleTemplate: "%s | Barbería Premium Temuco",
+    defaultDescription: "Barbería profesional en Temuco. Cortes, barbas y estilo moderno con atención personalizada. Más de 5 años de experiencia. ¡Agenda tu hora!",
+    keywords: "barbería temuco, barbería premium, corte de pelo temuco, barba temuco, peluquería hombre, degradado fade, barbero profesional",
+    ogImage: "/og-barberia.jpg",
     twitterCard: "summary_large_image",
     locale: "es_CL",
     type: "website"
   }
 };
 
-// 📍 Datos estructurados Schema.org (LocalBusiness)
+// 📍 Datos estructurados Schema.org (HairSalon)
 export const schemaOrg = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://benjamin-mardones.cl#localbusiness",
-  "name": site.business.name + " - " + site.business.tagline,
+  "@type": "HairSalon",
+  "@id": "https://barberiatemuco.cl#hairsalon",
+  "name": site.business.name,
   "description": site.business.description,
-  "url": "https://benjamin-mardones.cl",
+  "url": "https://barberiatemuco.cl",
   "telephone": site.business.phone,
   "email": site.business.email,
+  "priceRange": "$$",
+  "image": "https://barberiatemuco.cl/og-barberia.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": site.business.address.street,
@@ -308,11 +319,16 @@ export const schemaOrg = {
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": site.business.hours.weekday.open,
       "closes": site.business.hours.weekday.close
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": site.business.hours.weekend.open,
+      "closes": site.business.hours.weekend.close
     }
   ],
-  "priceRange": "$$",
   "sameAs": [
-    site.social.github.url,
+    site.social.instagram.url,
     site.social.linkedin.url,
     site.social.instagram.url
   ],

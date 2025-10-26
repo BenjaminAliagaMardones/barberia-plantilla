@@ -5,40 +5,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 🎨 Sistema de colores profesional y reutilizable
+        // 🎨 Paleta de colores para Barbería Premium
         brand: {
-          DEFAULT: '#2563eb', // Azul principal - fácil acceso
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb', // 🎯 Color principal
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          DEFAULT: '#1A1A1A', // Negro elegante - color principal
+          50: '#f5f5f5',
+          100: '#e5e5e5',
+          200: '#cccccc',
+          300: '#999999',
+          400: '#666666',
+          500: '#333333',
+          600: '#1A1A1A', // 🎯 Color principal - Negro
+          700: '#141414',
+          800: '#0f0f0f',
+          900: '#0a0a0a',
+          950: '#000000',
         },
         accent: {
-          DEFAULT: '#f59e0b', // Ámbar vibrante - fácil acceso
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b', // 🎯 Acento principal
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+          DEFAULT: '#D4AF37', // Dorado elegante - acento principal
+          50: '#fdfbf5',
+          100: '#faf6e8',
+          200: '#f5edd1',
+          300: '#eedca5',
+          400: '#e6c870',
+          500: '#D4AF37', // 🎯 Acento principal - Dorado
+          600: '#c09a2a',
+          700: '#a07f22',
+          800: '#836821',
+          900: '#6e561f',
         },
         dark: {
-          DEFAULT: '#0f172a', // Slate oscuro profesional
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          900: '#0f172a',
-          950: '#020617',
+          DEFAULT: '#1A1A1A', // Negro principal para fondos
+          50: '#f5f5f5',
+          100: '#e5e5e5',
+          900: '#1A1A1A',
+          950: '#0a0a0a',
         },
         light: {
           DEFAULT: '#f8fafc', // Fondo claro neutral
@@ -83,13 +83,15 @@ module.exports = {
         '5xl': '2.5rem',
       },
       boxShadow: {
-        'brand': '0 10px 40px rgba(37, 99, 235, 0.15)',
-        'brand-lg': '0 20px 60px rgba(37, 99, 235, 0.20)',
-        'accent': '0 10px 40px rgba(245, 158, 11, 0.15)',
+        'brand': '0 10px 40px rgba(26, 26, 26, 0.15)',
+        'brand-lg': '0 20px 60px rgba(26, 26, 26, 0.20)',
+        'accent': '0 10px 40px rgba(212, 175, 55, 0.15)',
+        'gold': '0 4px 20px rgba(212, 175, 55, 0.25)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'inner-lg': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-        'glow': '0 0 20px rgba(37, 99, 235, 0.3)',
+        'glow': '0 0 20px rgba(212, 175, 55, 0.4)',
+        'glow-gold': '0 0 30px rgba(212, 175, 55, 0.5)',
       },
       animation: {
         // 🎬 Animaciones profesionales y suaves

@@ -1,0 +1,116 @@
+---
+/**
+ * AboutSection.astro
+ * Sección "Sobre Nosotros" para la barbería
+ */
+import { barberia } from '../data/barberia.js';
+
+const { about } = barberia;
+---
+
+<section id="nosotros" class="py-20 px-4 bg-gradient-to-br from-neutral-900 via-brand-900 to-neutral-900">
+  <div class="max-w-7xl mx-auto">
+    <!-- Encabezado -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+        {about.title}
+      </h2>
+      <p class="text-xl text-accent-400 font-semibold mb-6">
+        {about.subtitle}
+      </p>
+      <div class="w-24 h-1 bg-accent-500 mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Columna izquierda: Imagen del local -->
+      <div class="relative" data-aos="fade-right">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-accent/20">
+          <!-- Placeholder para imagen del local -->
+          <div class="aspect-square bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-8xl mb-4">💈</div>
+              <p class="text-accent-400 text-lg font-semibold">Barbería Premium</p>
+              <p class="text-neutral-400 text-sm mt-2">Local profesional en Temuco</p>
+            </div>
+          </div>
+          
+          <!-- Badge flotante -->
+          <div class="absolute top-6 right-6 bg-accent-500 text-brand-900 px-6 py-3 rounded-full shadow-glow-gold">
+            <p class="font-bold text-lg">5+ años</p>
+            <p class="text-xs">de experiencia</p>
+          </div>
+        </div>
+
+        <!-- Elementos decorativos -->
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent-500/20 rounded-full blur-2xl"></div>
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent-500/20 rounded-full blur-2xl"></div>
+      </div>
+
+      <!-- Columna derecha: Contenido -->
+      <div class="space-y-8" data-aos="fade-left">
+        <!-- Descripción -->
+        <div>
+          <p class="text-neutral-300 text-lg leading-relaxed mb-6">
+            {about.description}
+          </p>
+          <p class="text-neutral-400 leading-relaxed italic border-l-4 border-accent-500 pl-4">
+            {about.mission}
+          </p>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="grid grid-cols-1 gap-6">
+          {about.benefits.map((benefit, index) => (
+            <div 
+              class="bg-neutral-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-neutral-800/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10 border border-neutral-700/50"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div class="flex items-start space-x-4">
+                <div class="text-4xl flex-shrink-0">{benefit.icon}</div>
+                <div>
+                  <h3 class="text-white font-semibold text-lg mb-2">{benefit.title}</h3>
+                  <p class="text-neutral-400 text-sm">{benefit.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Características adicionales -->
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          {about.experience.map((item, index) => (
+            <div 
+              class="text-center p-4 bg-neutral-800/30 rounded-lg border border-accent-500/20"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+            >
+              <p class="text-accent-400 font-semibold text-sm">✓ {item}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="pt-6" data-aos="fade-up">
+          <a 
+            href={barberia.hero.ctaPrimary.link}
+            class="inline-flex items-center justify-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-brand-900 font-bold rounded-lg shadow-gold hover:shadow-glow-gold transition-all duration-300 transform hover:scale-105"
+          >
+            <span>{barberia.hero.ctaPrimary.text}</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animaciones personalizadas */
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+  }
+</style>
